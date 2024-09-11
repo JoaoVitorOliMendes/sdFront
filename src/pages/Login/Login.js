@@ -70,7 +70,7 @@ export default function Login() {
                         </button>
                     </Form.Submit>
                 </Form.Root>
-                <Link to="/cadastro" className="text-gray-500 hover:text-red-800">Create new account</Link>
+                <Link to="/register" className="text-gray-500 hover:text-red-800">Create new account</Link>
             </div>
         </div>
     )

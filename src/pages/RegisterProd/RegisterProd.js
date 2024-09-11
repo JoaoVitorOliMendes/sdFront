@@ -1,9 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import * as Form from '@radix-ui/react-form';
 import { number, string, z } from "zod";
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Link, useNavigate } from 'react-router-dom'
+import { ArrowLeftIcon } from '@radix-ui/react-icons';
 
 const productSchema = z.object({
   name: string().min(1, { message: 'Username is required'}),
-  price: number().gt(0.01, { message: 'Prices cannot be under R$ 0.01'}).default(1) ().min(1, { message: 'Password is required'}),
+  price: number().gt(0.01, { message: 'Prices cannot be under R$ 0.01'}).default(1),
   img: string()
 })
 
@@ -15,7 +19,6 @@ export default function RegisterProd() {
     const handleRegister = async (val) => {
         console.log(val);
     }
-
 
     return (
         <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg flex items-center justify-center flex-col">
