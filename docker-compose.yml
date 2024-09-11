@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  backend:
+    build: ./nodejs_jwt_auth
+    ports:
+      - 3500:3500
+    env_file: ./nodejs_jwt_auth/.env
+
+  frontend:
+    build: ./webapp
+    ports:
+      - 3000:3000
